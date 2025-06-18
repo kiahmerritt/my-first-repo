@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Q課題メリットキア</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Noto+Sans+JP:wght@100..900&family=Roboto+Slab:wght@100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                font-family: "Noto Sans JP", sans-serif;
+                background-color: #ffffff;
+            }
+            p,a,span{
+                font-size: 13px;
+                line-height: 13px;
+            }
+            header {          /*ヘッダー*/
+                width: 100%;  /*画面全体にする*/
+                height: fit-content;
+                background-color: #ffffff;
+                font-size: 18px;
+            }
+            .mainheader{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 4px 15px 4px 15px;
+            }
+            .header__action-buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .AD {      /*一番上の黒い広告*/
+                font-size: 18px;
+                color: #ffffff;
+                background-color: #000000;
+                width: 100%;
+                height: 40px;
+                display: flex;              /* フレックスボックスにする */
+                justify-content: center;   /* 横方向に中央揃え */
+                align-items: center;       /* 縦方向に中央揃え */
+            }
+            .navheader {
+                display: flex;
+                padding: 7px 15px 7px 15px;
+                justify-content: space-between;
+                align-content: center;
+                border: #E5E5E5;
+                border-style: solid;
+                border-width: 1px 0px 1px 0px;
+            }
+            menu {
+                align-items: center;
+                display: flex;
+                gap: 15px;
+                font-size: 13px;
+                list-style: none;
+            }
+            .search {
+                display: flex;
+                font-size: 13px;
+                gap: 10px;
+                align-items: center;
+            }
+            .select {
+                border: none;
+                font-size: 18px;
+                width: 116px;
+                height: 26px;
+                cursor: pointer;
+            }
+
+
+
+            .top {
+                height: 550px;
+                width: 100%;
+                background-image: url(https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/top.jpg?raw=true);/*女の人の写真*/
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                padding-top: 100px; /* テキストを中央よりやや下に寄せる */
+                gap: 15px;
+            }
+            .top p {
+                font-size: 18px;
+                color: #858585;
+            }
+            .top h1 {
+                font-size: 36px;
+                color: #FFFFFF;
+            }
+            .top h2 {
+                font-size: 28px;
+                color: #141414;
+            }
+            .box {
+                height: 35px;
+                width: 220px;
+                background-color: #FFFFFF;
+                color: #141414;
+                border: 1px solid #141414;
+                font-size: 13px;
+                justify-content: center;
+                padding-top: 8px;
+                cursor: pointer;
+            }
+            .box:hover {
+                background-color: #141414;
+                color: #FFFFFF;
+            }
+            .first_button {
+                display: flex;
+                gap: 30px;
+            }
+            .mobile_only {
+                display: none;
+            }
+
+
+
+            .blog {
+                display: flex;
+                flex-direction: row; /* ← 横並びに */
+                justify-content: center;
+                align-items: flex-start;
+                gap: 40px; /* ← 写真と記事の間隔 */
+                padding: 20px;
+                width: 100%;
+                color: #141414;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .new-articles {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* ← 左寄せに変更 */
+                gap: 20px;
+            }
+            .article {
+                border-bottom: 1px solid #E5E5E5;
+                padding: 10px 0;
+                width: 90%;
+                max-width: 600px;
+                text-align: left;
+            }
+            .article .date {
+                font-size: 12px;
+                color: #858585;
+                margin-bottom: 5px;
+            }
+            .article-title {
+                font-size: 16px;
+                font-weight: 500;
+                color: #141414;
+            }
+            .blog_img img {
+                width: 500px;
+                height: 350px;
+                object-fit: cover;
+            }
+
+
+
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            .title h1 {
+                font-size: 24px;
+                font-weight: normal;
+                margin: 50px 0px 50px 0px
+            }
+            .collections {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+            }
+            .collections p {
+                font-size: 13px;
+                color: #858585;
+                padding: 8px;
+            }
+            .collections h2 {
+                font-size: 17px;
+                color: #141414;
+                padding: 8px;
+            }
+            .collections h3 {
+                font-size: 13px;
+                color: #141414;
+                padding: 8px;
+            }
+            .colorgroup{
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 4px;
+                margin-top: 10px;
+            }
+            .collections_actions{
+                width: max-content;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                padding: 0 5px;
+                width: min-content;
+            }
+            .collections_actions > img {
+                width: 20px;
+            }
+            .cart_and_actions {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
+            .cart_button {
+                width: 167px;
+                height: 35px;
+                background-color: #FFFFFF;
+                color: #141414;
+                border: 1px solid #141414;
+                font-size: 13px;
+                text-align: center;
+                align-content: center;
+                cursor: pointer;
+                margin: 10px 0px 10px 0px;
+            }
+            .cart_button:hover {
+                background-color: #141414;
+                color: #FFFFFF;
+                border: 1px solid #FFFFFF;
+            }
+            .mobile_cart_button {
+                display: none; /* モバイルでは非表示 */
+            }
+
+
+
+            .product {
+                max-width: 270px;
+                box-sizing: border-box;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 60px;
+                position: relative;
+            }
+            .sub, .add, .number1 {
+                height: 30px;
+                width: 30px;
+                font-size: 13px;
+                line-height: 30px;
+                text-align: center;
+                align-content: center;
+                cursor: pointer;
+            }
+            .sizevar {
+                margin-top: 8px;
+                display: flex;
+                gap: 10px;
+            }
+            .size {
+                height: 25px;
+                width: 25px;
+                padding: 4px;
+                border: 1px solid #E5E5E5;
+                font-size: 13px;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+            .size:hover {
+                background-color: #ffffff;
+                color: #141414;
+                border: solid 1px #141414;
+            }
+            .star { 
+                display: flex; 
+                gap: 4px; 
+                margin: 15px 0px 0px 0px;
+            }
+            .color {
+                display: block;      /* インラインでブロック的に扱う */
+                width: 22px;                /* ドットの横幅 */
+                height: 22px;               /* ドットの高さ */
+                border-radius: 50%;         /* 丸くする */
+            }
+            input[type=submit] {
+                height: 35px;
+                width: 167px;
+                background-color: #FFFFFF;
+                border: #141414;
+                border-style: solid;
+                border-width: 1px;
+                margin-top: 10px;
+                margin-bottom: 8px;
+            }
+            button {
+                padding: 20px;
+                background-color: #141414;
+                color: #ffffff;
+                display: block; 
+            }
+            button:hover {
+                background-color: #ffffff;
+                color: #141414;
+                border: solid 1px #141414;
+            }
+            .sub, .add {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                border: 1px solid #E5E5E5;
+                font-size: 13px;
+                color: #141414;
+            }
+            .number1 {
+                display: inline-block;
+                width: 66px;
+                height: 35px;
+                margin: 4px;
+                border: 1px solid #E5E5E5;
+                font-size: 13px;
+                background-color: #F5F5F5;
+                color: #858585;
+            }
+            .label {
+                position: absolute;
+                background-color: #FFDE2D; /* 黄色 */
+                color: #141414;
+                font-size: 13px;
+                top: 45px;
+                left: 15px;
+            }
+            .mobile_eye {
+                display: none;
+            }
+
+
+
+            .contents {
+                display: flex;
+                justify-content: center;
+                margin: 30px;
+                gap: 20px;
+            }
+            .wrapper {
+                width: 100%;
+                aspect-ratio: 1/1;
+                padding: 20px 20px 14px 20px;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                align-items: center;
+            }
+            .sq {
+                width: 100%;
+                height: 21px;
+                background-color: #FFFFFFE6;
+                color: #141414;
+                font-size: 12px;
+                text-align: center;
+                padding: 3px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .sq:hover {
+                background-color: #FFFFFFE6;
+                color: #141414;
+                height: 410px;
+                width: 100%;
+            }
+            .colums {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+            }
+            .colums p {
+                font-size: 15px;
+                color: #ffffff;
+            }
+            .colums h1 {
+                font-size: 24px;
+            }
+            .img-wrapper {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                background-size: cover;
+                background-position: center;
+                gap: 10px;
+                width: 100%;
+                aspect-ratio: 570 / 415;
+            }
+            .img-wrapper2 img {
+                object-fit: cover;
+                display: block;
+                width: 273px;
+                height: 200px;
+            }
+
+
+            .carousel {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .py {
+                width: 160px;
+                height: 35px;
+                background-color: #141414;
+                color: #ffffff;
+                font-size: 12px;
+                text-align: center;
+                align-content: center;
+            }
+            .py:hover {
+                background-color: #ffffff;
+                color: #141414;
+            }
+            .maru {
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                margin: 4px;
+                align-content: center;
+            }
+            .text h1 {
+                font-size: 24px;
+                font-weight: normal;
+            }
+            .page {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                margin: 50px;
+            }
+            .mobile_carousel {
+                display: none;
+            }
+            .carousel1, .carousel2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+
+
+            footer {
+                margin-top: 30px;
+                background-color: #FFFFFF;
+                display: block;
+            }
+            footer p {
+                color: #858585;
+                font-size: 13px;
+            }
+            footer h2 {
+                font-size: 15px;
+                font-weight: normal;
+                color: #141414;
+            }
+            footer h3 {
+                font-size: 15px;
+                font-weight: normal;
+                color: #858585;
+            }
+            .footer_top {
+                display: flex;               /* これが必要！ */
+                width: 100%;
+                justify-content: space-between;  /* ← これで左右に分かれる！ */
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                align-items: flex-start; /* 追加：縦位置揃え */
+                border: #E5E5E5;
+                border-style: solid;
+                border-width: 1px 0px 0px 0px;
+                padding: 20px;
+            }
+            .migi {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .hidari {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                display: flex;
+                
+            }
+            input[type="text"] {
+                margin: 0 0 0 10px;
+                border: 1px solid #E5E5E5;
+                font-size: 13px;
+                width: 470px;
+                height: 35px;
+                background-color: #F5F5F5;
+                color: #858585;
+            }
+            .footer_center {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 20px 0;
+            }
+            .order_main {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order_left {
+                width: 50%;
+            }
+            .plus {
+                display: none;
+            }
+            .footer_info img {
+                display: none;
+            }
+
+            .order_right {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* 左寄せにしたいならそのまま。中央寄せなら center */
+                gap: 8px;
+            }
+            .block_order {
+                width: 50%;
+            }
+            .block_info {
+                width: 25%;
+            }
+            .block_SNS {
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .contact, .mail {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .time {
+                display: flex;
+                gap: 10px;
+                align-items: start;
+            }
+            .customer_service {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer_bottom {
+                display: flex;               /* これが必要！ */
+                width: 100%;
+                justify-content: space-between;  /* ← これで左右に分かれる！ */
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                border: #E5E5E5;
+                border-style: solid;
+                border-width: 1px 0px 0px 0px;
+                align-items: center;
+            }
+            .left {
+                display: flex;              /* 横並び */
+                gap: 10px;                  /* アイテム間の余白 */
+                align-items: center;
+            }
+            .payment {
+                display: flex;              /* 横並び */
+                gap: 16px;                  /* アイテム間の余白 */
+                flex-wrap: wrap;         /* 必要に応じてアイコンを折り返せるように */
+                max-width: 100%;         /* 親の幅を超えないように */
+            }
+            .SNS {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+                flex-direction: row;
+            }
+            .subscribe-btn {
+                background-color: #FFFFFF;
+                border: 1px solid #141414;
+                color: #141414;
+                width: 91px;
+                height: 35px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                cursor: pointer;
+                justify-content: center;
+            }
+            .footer_totop {
+                display: none;
+            }
+            .mobile_SNS {
+                display: none;
+            }
+            
+
+
+            @media (max-width: 768px) {
+                header, .navheader, .mainheader, .footer_center, .footer_bottom {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .footer_top {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    border: #E5E5E5;
+                    border-style: solid;
+                    border-width: 1px 0px 1px 0px;
+                }
+                .mobile_only {
+                    display: block;
+                }
+
+                menu,
+                .search,.navheader
+                {
+                    display: none;
+                }
+
+                .mainheader {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                }
+                .select {
+                    display: none;
+                }
+
+                .header__action-buttons {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                .top h1 {
+                    font-size: 24px;
+                }
+
+                .top h2 {
+                    font-size: 18px;
+                }
+
+                .first_button {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .article-title {
+                    font-size: 14px;
+                }
+                .blog {
+                    flex-direction: column; /* 縦並びに変更 */
+                    align-items: center; /* 中央揃え */
+                    gap: 20px; /* 間隔を広げる */
+                }
+                .blog_img img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 550px; /* 最大幅を設定 */
+                }
+
+                .collections {
+                    flex-direction: column;
+                    gap: 20px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .collections_actions{
+                    width: 100%;
+                }
+                .cart_and_actions{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .cart_button {
+                    display: none;
+                }
+                .mobile_cart_button {
+                    display: flex;
+                    width: 167px;
+                    height: 35px;
+                    background-color: #FFFFFF;
+                    color: #141414;
+                    border: 1px solid #141414;
+                    font-size: 13px;
+                    text-align: center;
+                    align-items: center;
+                    cursor: pointer;
+                    margin: 10px 0px 10px 0px;
+                    justify-content: center;
+                }
+                .mobile_eye {
+                    display: block;
+                }
+
+                .contents, .colums, .carousel {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .wrapper, .img-wrapper {
+                    width: 90%;
+                    height: auto;
+                }
+
+                .img-wrapper img {
+                    width: 100%;
+                    height: auto;
+                }
+                .mobile_carousel {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    font-size: 15px;
+                    color: #858585;
+                    margin: 15px 30px 15px 30px;
+                }
+                .mobile_carousel_text {
+                    line-height: 20px;
+                }
+                .mobile_carousel_btn {
+                    width: 125px;
+                    height: 35px;
+                    background-color: #ffffff;
+                    color: #141414;
+                    border: 1px solid #141414;
+                    font-size: 13px;
+                    text-align: center;
+                    align-content: center;
+                    cursor: pointer;
+                }
+                .carousel1 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 20px;
+                }
+                .carousel2 {
+                    display: none;
+                }
+
+                .block_order {
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .block_info {
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    position: relative;
+                }
+                .order_list, .order_left {
+                    display: none;
+                }
+                .order_main {
+                    width: 100%;
+                }
+                .order_right {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                    border: #E5E5E5;
+                    border-style: solid;
+                    border-width: 1px 0px 1px 0px;
+                    position: relative;
+                }
+                .plus {
+                    font-size: 20px;
+                    display: inline-block;
+                    position: absolute;
+                    right: 23px;
+                    top: 23px;
+                    color: #141414
+                }
+                .footer_info img {
+                    display: inline-block;
+                    position: absolute;
+                    right: 23px;
+                    top: 23px;
+                }
+                .block_SNS {
+                    display: none;
+                }
+                .footer_info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 20px;
+                }
+
+                input[type="text"] {
+                    width: 90%;
+                    margin: 10px 0;
+                }
+
+                .hidari{
+                    width: 100%;
+                    flex-direction: column;
+                }
+                .hidari > input{
+                    width: 100%;
+                }
+                .subscribe-btn {
+                    width: 100%;
+                    padding: 0 30px;
+                    margin-bottom: 10px;
+                }
+
+                .payment {
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 20px;
+                    width: 100%;
+                    border: #E5E5E5;
+                    border-style: solid;
+                    border-width: 1px 0px 0px 0px;
+                }
+                .mobile_SNS {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    margin: 20px 0px 20px 0px;
+                }
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 10px;
+                }
+                .footer_totop {
+                    background-color: #141414;
+                    color: #FFFFFF;
+                    font-size: 13px;
+                    text-align: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                }
+                .footer_totop img {
+                    filter: invert(100%);
+                }
+
+                .product {
+                    width: 167px;
+                    max-width: 300px;
+                }
+
+                .product > img {
+                    width: 100%;
+                    aspect-ratio: 167/214;
+                    height: auto;
+                }
+                .sq:hover {
+                    display: none;
+                }
+                .title2 {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body> <!--ここから-->
+        <header class="page-header"><!--ヘッダー-->
+            <div class="AD">
+                <p>最終クリアランス:最大20%オフ<img src=" https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cross.svg" alt="閉じる"></p>
+            </div>
+            <div class="mainheader">
+                <div class="mobile_only">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-hamburger.svg" alt="検索">
+                </div>
+                <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/MisellDesktop.svg" alt="ロゴ">
+                <div class="header__action-buttons">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-help.svg" alt="ヘルプ">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-account.svg" alt="アカウント">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-favorite.svg" alt="ライク">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cart.svg" alt="カート">
+                    <p>(0)</p>
+                    <select name="payment" class="select">
+                        <option value="Japan">日本 JPY(¥)</option>
+                        <option value="America">アメリカ USD($)</option>
+                    </select>
+                </div>  
+            </div>
+            <div class="navheader">
+                <menu>
+                    <li>ショップ</li>
+                    <li>ブログ</li>
+                    <li>コレクションリスト</li>
+                    <li>おすすめ</li>
+                </menu>
+                <div class="search">
+                    <p>検索</p>
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-serch.svg" alt="サーチ">    
+                </div>
+            </div>
+        </header><!--ヘッダーここまで-->
+
+
+
+        <main><!--コンテンツ-->
+            <div class="top"><!--トップページ-->
+                <p>オンラインショップ限定</p>
+                <h1>ラストクリアランス</h1>
+                <h2>30-80% off</h2>
+                <div class="first_button">
+                    <div class="box box1" >ウィメンズ</div>
+                    <div class="box box2" >メンズ</div>
+                </div>
+            </div><!--トップページここまで-->
+
+            <div class="title">
+                <h1>新着ニュース</h1>
+            </div>
+            <div class="blog"><!--ブログ-->
+                <div class="blog_img">
+                    <img src="https://chihiro-photos.com/wp-content/uploads/2019/08/furano-1024x683.jpg" alt="ひまわり" width=550px height=300px>
+                </div>
+                <div class="new-articles">
+                    <div class="article">
+                        <p class="date">2025年6月1日</p>
+                        <h2 class="article-title">夏の新作が入荷しました！</h2>
+                    </div>
+                    <div class="article">
+                        <p class="date">2025年5月25日</p>
+                        <h2 class="article-title">MISEル初のアウトドアイベント開催</h2>
+                    </div>
+                    <div class="article">
+                        <p class="date">2025年5月10日</p>
+                        <h2 class="article-title">人気ランキングTOP10を公開!</h2>
+                    </div>
+                </div>
+                
+            </div><!--ブログここまで-->
+            <div class="title">
+                <h1>コレクション</h1>
+            </div>
+            <div class="collections"><!--コレクション-->
+                <div class="product"><!--プロダクト１-->
+                    <div class="label">予約注文</div>
+                    <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/collections1.jpg?raw=true" alt="サングラス" height = 346 width = 270>
+                    <p>MISEル</p>
+                    <h3>サングラス</h3>
+                    <h2>￥10,000</h2>
+                    <div class="sizevar">
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">XL</span>
+                    </div>
+                    <div class="number">
+                        <span class="sub">-</span>
+                        <span class="number1">1</span>
+                        <span class="add">+</span>
+                    </div>
+                    <div class="colorgroup">  <!--まる-->
+                        <span class="color" style="background-color: #191970;"></span>     <!--spanは横並びになる-->
+                        <span class="color" style="background-color: #FFDEAD;"></span>
+                        <span class="color" style="background-color: #FFF0F5;"></span>
+                        <span class="color" style="background-color: #FFA07A;"></span>
+                        <span class="color" style="background-color: #B8860D;"></span>
+                        <span class="color" style="background-color: #8FBC8F;"></span>
+                    </div>
+
+                    <div class="cart_and_actions">
+                        <div class="cart_button">
+                            <p>カートに入れる</p>
+                        </div>
+                        <div class="mobile_cart_button">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cart.svg" alt="カート">
+                            <p>カートに入れる</p>
+                        </div>
+                        
+                        <div class="collections_actions">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-favorite.svg" alt="ハート">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-compare.svg" alt="天秤">
+                            <img class="mobile_eye" src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-eye.svg" alt="目">
+                        </div>
+                    </div>
+
+                    <div class="star">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                    </div>    
+                </div><!--プロダクト１ここまで-->
+
+                <div class="product"><!--プロダクト２-->
+                    <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/collections2.jpg?raw=true" alt="ルーズフィットジーンズ" height = 346 width = 270>
+                    <p>MISEル</p>
+                    <h3>ルーズフィットジーンズ</h3>
+                    <h2>￥40,000</h2>
+                    <div class="sizevar">
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">XL</span>
+                    </div>
+                    <div class="number">
+                        <span class="sub">-</span>
+                        <span class="number1">1</span>
+                        <span class="add">+</span>
+                    </div>
+                    <div class="colorgroup">   <!--まる-->
+                        <span class="color" style="background-color: #191970;"></span>     <!--spanは横並びになる-->
+                        <span class="color" style="background-color: #FFDEAD;"></span>
+                        <span class="color" style="background-color: #FFF0F5;"></span>
+                        <span class="color" style="background-color: #FFA07A;"></span>
+                        <span class="color" style="background-color: #B8860D;"></span>
+                        <span class="color" style="background-color: #8FBC8F;"></span>
+                    </div>
+
+                    <div class="cart_and_actions">
+                        <div class="cart_button">
+                            <p>カートに入れる</p>
+                        </div>
+                        <div class="mobile_cart_button">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cart.svg" alt="カート">
+                            <p>カートに入れる</p>
+                        </div>
+                        
+                        <div class="collections_actions">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-favorite.svg" alt="ハート">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-compare.svg" alt="天秤">
+                            <img class="mobile_eye" src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-eye.svg" alt="目">
+                        </div>
+                    </div>
+
+                    <div class="star">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                    </div>
+                    
+                </div><!--プロダクト２ここまで-->
+
+                <div class="product"><!--プロダクト３-->
+                    <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/collections3.jpg?raw=true" alt="ニットウェア" height = 346 width = 270>
+                    <p>MISEル</p>
+                    <h3>ニットウェア</h3>
+                    <h2>￥30,000</h2>
+                    <div class="sizevar">
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">XL</span>
+                    </div>
+                    <div class="number">
+                        <span class="sub">-</span>
+                        <span class="number1">1</span>
+                        <span class="add">+</span>
+                    </div>
+                    <div class="colorgroup">   <!--まる-->
+                        <span class="color" style="background-color: #191970;"></span>     <!--spanは横並びになる-->
+                        <span class="color" style="background-color: #FFDEAD;"></span>
+                        <span class="color" style="background-color: #FFF0F5;"></span>
+                        <span class="color" style="background-color: #FFA07A;"></span>
+                        <span class="color" style="background-color: #B8860D;"></span>
+                        <span class="color" style="background-color: #8FBC8F;"></span>
+                    </div>
+
+                    <div class="cart_and_actions">
+                        <div class="cart_button">
+                            <p>カートに入れる</p>
+                        </div>
+                        <div class="mobile_cart_button">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cart.svg" alt="カート">
+                            <p>カートに入れる</p>
+                        </div>
+                        
+                        <div class="collections_actions">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-favorite.svg" alt="ハート">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-compare.svg" alt="天秤">
+                            <img class="mobile_eye" src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-eye.svg" alt="目">
+                        </div>
+                    </div>
+
+                    <div class="star">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                    </div>
+                    
+                </div><!--プロダクト３ここまで-->
+
+                <div class="product"><!--プロダクト４-->
+                    <div class="label">予約注文</div>
+                    <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/collections4.jpg?raw=true" alt="ダウンベスト" height = 346 width = 270>
+                    <p>MISEル</p>
+                    <h3>ダウンベスト</h3>
+                    <h2>￥50,000</h2>
+                    <div class="sizevar">
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">XL</span>
+                    </div>
+                    <div class="number">
+                        <span class="sub">-</span>
+                        <span class="number1">1</span>
+                        <span class="add">+</span>
+                    </div>
+                    <div class="colorgroup">   <!--まる-->
+                        <span class="color" style="background-color: #191970;"></span>     <!--spanは横並びになる-->
+                        <span class="color" style="background-color: #FFDEAD;"></span>
+                        <span class="color" style="background-color: #FFF0F5;"></span>
+                        <span class="color" style="background-color: #FFA07A;"></span>
+                        <span class="color" style="background-color: #B8860D;"></span>
+                        <span class="color" style="background-color: #8FBC8F;"></span>
+                    </div>
+
+                    <div class="cart_and_actions">
+                        <div class="cart_button">
+                            <p>カートに入れる</p>
+                        </div>
+                        <div class="mobile_cart_button">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cart.svg" alt="カート">
+                            <p>カートに入れる</p>
+                        </div>
+                        
+                        <div class="collections_actions">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-favorite.svg" alt="ハート">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-compare.svg" alt="天秤">
+                            <img class="mobile_eye" src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-eye.svg" alt="目">
+                        </div>
+                    </div>
+
+                    <div class="star">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-ster.svg" alt="星">
+                    </div>
+                </div><!--プロダクト４ここまで-->
+                
+            </div><!--コレクションここまで-->
+            <button style="margin: 80px auto;" type="submit">すべてのコレクションを見る</button>
+
+            <div class="contents">
+                <div class="wrapper" style="background-image: url('https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/womens.jpg?raw=true');">
+                    <div class="sq button1">ウィメンズ</div>
+                </div>
+                <div class="wrapper" style="background-image: url('https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/mens.jpg?raw=true');">
+                    <div class="sq button2">メンズ</div>
+                </div>
+                <div class="wrapper" style="background-image: url('https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/goods.jpg?raw=true');">
+                    <div class="sq button3">グッズ</div>
+                </div>
+            </div>
+
+            <div class="colums">
+                <div class="img-wrapper" style="background-image: url('https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/color.jpg?raw=true');">
+                    <p>新着</p>
+                    <h1>選べるカラー</h1>
+                    <h2>色鮮やかなエッセンシャルスタイル</h2>
+                    <div class="py button1">詳細を見る</div>
+                </div>
+                <div class="img-wrapper" style="background-image: url('https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/colaboration.jpg?raw=true');">
+                    <p>それらすべてを発見</p>
+                    <h1>コラボレーション</h1>
+                    <div class="py button1">詳細を見る</div>
+                </div>
+                
+            </div>
+            <div class="title title2">
+                <h1>記事カルーセル</h1>
+            </div>
+            <div class="carousel">
+                <div class="carousel1">
+                    <div class="img-wrapper2">
+                        <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/2025SpringSummer.jpg?raw=true" alt="コレクション">
+                    </div>
+                    <div class="text">
+                        <h1>2025春夏コレクション</h1>
+                    </div>
+                </div>
+                <div class="carousel2">
+                    <div class="img-wrapper2">
+                        <img src="https://github.com/kzmSuzuki/webPropramming1_1Q/blob/main/src/img/LifeWearMagazine.jpg?raw=true" alt="マガジン">
+                    </div>
+                    <div class="text">
+                        <h1>LifeWear magazine</h1>
+                        <h1>春夏号</h1>
+                    </div>
+                </div>
+                <div class="mobile_carousel">
+                    <p class="mobile_carousel_text">そしてジョバンニはすぐうしろの天気輪の柱がいつかぼんやりした三角標の形になって、しばらく蛍ほたるのように、ぺかぺか消えたりともったりしているのを見ました。それはだんだんはっきりして、とうとうりんとうごかないようになり、濃こい鋼青こうせいのそらの野原に</p>
+                    <p>2025年 2月 21日に</p>
+                    <p>MISEル太郎が投稿</p>
+                    <div class="mobile_carousel_btn">記事を読む</div>
+                </div>
+            </div>
+            <div class="page">   <!--まる-->
+                <span class="maru" style="background-color: #141414;"></span>     <!--spanは横並びになる-->
+                <span class="maru" style="background-color: #E5E5E5;"></span>
+                <span class="maru" style="background-color: #E5E5E5;"></span>
+            </div>
+        </main><!--コンテンツここまで-->
+
+        <footer><!--フッター-->
+            <div class="footer_top">
+                <div class="migi">
+                    <h2>メルマガの購読</h2>
+                    <h3>『MISEル』のメルマガを登録してオトクな情報・最新の情報を受け取ろう!</h3>
+                </div>
+
+                <div class="hidari">
+                    <input type="text" name="mailaddress"  placeholder="メールアドレスを入力してください">
+                    <button class="subscribe-btn"><span>購読!</span></button>
+                </div>
+            </div>
+            <div class="footer_center">
+                <div class="block_order">
+                    <div class="order_main">
+                        <div class="order_left"></div> <!-- 左側は空 -->
+                        <div class="order_right">
+                            <h2>ご注文</h2>
+                            <p class="plus">+</p>
+                            <div class="order_list">
+                                <p>個人アカウント</p>
+                                <p>カートを見る</p>
+                                <p>プライバシーポリシー</p>
+                                <p>クッキーの使用</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_info">
+                    <div class="footer_info">
+                        <h2>フッター情報</h2>
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-cross.svg" alt="閉じる">
+                    </div>
+                    <p>ご不明な点ございましたらよくある質問をご覧ください。</p>
+                    <p>またはカスタマーサービスまでお問い合わせください。</p>
+                    <div class="customer_service">
+                        <h2>カスタマーサービス</h2>
+                        <div class="contact">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-tel.svg" alt="tel">
+                            <p>電話番号: 00-0000-0000</p>
+                        </div>
+                        <div class="time">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-clock.svg" alt="time">
+                            <div class="time_text">
+                                <p>月曜 - 金曜: 9:00 am - 6:00 pm</p>
+                                <p>土曜: 9:00 am - 4:00 pm</p>
+                                <p>日曜: 9:00 am - 2:00 pm</p>
+                            </div>
+                        </div>
+                        <div class="mail">
+                            <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-mail.svg" alt="mail">
+                            <p>E-mailでのお問い合わせ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_SNS">
+                    <h2>SNSをフォロー</h2>
+                    <div class="SNS">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-facebook.svg" alt="facebook">
+                        <p>Facebook</p>
+                    </div>
+                    <div class="SNS">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-x.svg" alt="x">
+                        <p>Twitter</p>
+                    </div>
+                    <div class="SNS">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-Instagram.svg" alt="instagram">
+                        <p>Instagram</p>
+                    </div>
+                    <div class="SNS">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-pinterest.svg" alt="pintarest">
+                        <p>Pinterest</p>
+                    </div>
+                    <div class="SNS">
+                        <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-Youtube.svg" alt="youtube">
+                        <p>YouTube</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer_bottom">
+                <div class="left">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/MisellDesktop.svg" alt="ロゴ">
+                    <p>Copyright ©2024, Misell Powered by Shopify</p>
+                </div>
+                <div class="mobile_SNS">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-facebook.svg" alt="facebook">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-x.svg" alt="x">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-Instagram.svg" alt="instagram">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-pinterest.svg" alt="pintarest">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/Icon-Youtube.svg" alt="youtube">
+                </div>
+                <span class="payment">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-Visa.svg" alt="visa">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-payment-jcb.svg" alt="jcb">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-payment-shopify-pay.svg" alt="shopify-pay">
+                    <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-payment-google-pay.svg" alt="google-pay">
+                </span>
+            </div>
+            <div class="footer_totop">
+                <img src="https://raw.githubusercontent.com/kzmSuzuki/webPropramming1_1Q/d72c522480320dde15543e2e624df7a4cf36c842/src/icon/icon-arrow.svg" alt="上に戻る">
+                <p>トップ</p>
+            </div>
+        </footer><!--フッターここまで-->
+    </body><!--終わり-->
+</html>

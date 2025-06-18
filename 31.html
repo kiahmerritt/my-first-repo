@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>list</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+            #addButton {
+                background-color: #4f46e5;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+            .item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #fff;
+                border: 1px solid #ddd;
+                padding: 10px;
+                width: 200px;
+                margin: 5px 0;
+                border-radius: 6px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .deleteButton {
+                background-color: #ef4444;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="addButton">追加</button>
+        <div id="itemList"></div>
+
+        <script>
+            let itemCount = 0;
+            const addButton = document.getElementById('addButton');
+            const itemList = document.getElementById('itemList');
+
+            addButton.addEventListener('click', function() {
+            itemCount++;
+
+            // アイテム要素を作成
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+
+            // テキストを作成
+            const itemText = document.createElement('span');
+            itemText.textContent = 'アイテム' + itemCount;
+
+            // 削除ボタンを作成
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'deleteButton';
+            deleteButton.textContent = '削除';
+
+            // 削除ボタンのイベント
+            deleteButton.addEventListener('click', function() {
+                itemDiv.remove();
+            });
+
+            // アイテムにテキストと削除ボタンを追加
+            itemDiv.appendChild(itemText);
+            itemDiv.appendChild(deleteButton);
+
+            // リストにアイテムを追加
+            itemList.appendChild(itemDiv);
+            });
+        </script>
+    </body>
+</html>

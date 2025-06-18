@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>信号機</title>
+    <style>
+        .traffic-light {
+            width: 400px;               /* 信号機の横幅 */
+            height: 150px;              /* 信号機の高さ */
+            background-color: #969696;    /* 信号機の背景色 */
+            border-radius: 100px;        /* 信号機の角を丸くする */
+            display: flex;             /* 子要素を縦に並べる */
+            flex-direction: row;     /* 縦方向に並べる */
+            justify-content: space-around; /* 子要素の間隔を均等にする */
+            align-items: center;        /* 子要素を中央に配置 */
+        }
+        .light {
+            width: 100px;                /* ドットの横幅 */
+            height: 100px;               /* ドットの高さ */
+            border-radius: 50%;         /* 丸くする */
+            gap: 20px;
+            display: flex;
+            justify-items: center;    /* 中央に配置 */
+            align-items: center;        /* 中央に配置 */
+            flex-direction: column;
+            background-color: #606060;
+        }
+        .red.on {
+            background-color: red;
+        }
+        .yellow.on {
+            background-color: yellow;
+        }
+        .green.on {
+            background-color: green;
+        }
+        button {
+            width: 200px;               /* ボタンの横幅 */
+            height: 50px;               /* ボタンの高さ */
+            background-color: #969696;  /* ボタンの背景色 */
+            color: black;               /* ボタンの文字色 */
+            border: none;               /* ボタンの枠線を消す */
+            border-radius: 5px;        /* ボタンの角を丸くする */
+            cursor: pointer;           /* マウスカーソルをポインターにする */
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div class="light red" id="redlight"></div>
+        <div class="light yellow" id="yellowlight"></div>
+        <div class="light green" id="greenlight"></div>
+    </div>
+    <button id="myButton">クリックしてね</button>
+
+    <script>
+        const btn = document.getElementById("myButton");
+        const redlight = document.getElementById("redlight");
+        const yellowlight = document.getElementById("yellowlight");
+        const greenlight = document.getElementById("greenlight");
+
+        let count = 0;
+
+        btn.addEventListener("click", () => {
+            count++;
+            btn.textContent = "クリック数: " + count;
+
+            // 全部消す
+            redlight.classList.remove("on");
+            yellowlight.classList.remove("on");
+            greenlight.classList.remove("on");
+
+            // 状態に応じて点灯
+            let state = (count - 1) % 3;
+            if (state === 0) {
+                redlight.classList.add("on");
+            } else if (state === 1) {
+                yellowlight.classList.add("on");
+            } else if (state === 2) {
+                greenlight.classList.add("on");
+            }
+        });
+
+        // 初期状態として赤点灯
+        redlight.classList.add("on");
+    </script>
+</body>
+</html>

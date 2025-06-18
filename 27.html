@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自己紹介</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size:30px;
+        }
+        p {
+            font-size: 15px;
+            color: #666;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Japanese" id ="jp" style="display: none;">
+        <h1>自己紹介</h1>
+        <p>こんにちは!私の名前はきあです！</p>
+        <p>プログラミング、デザイン、新しいことを学ぶのが好きです！</p>
+        <button id="switchToEn">Switch to English</button>
+    </div>
+    <div class="English" id="en" style="display: none;">
+        <h1>About Me</h1>
+        <p>Hello! My name is Kiah.</p>
+        <p>I love programming, design, and learning new things!</p>
+        <button id="switchToJp">日本語に切り替える</button>
+    </div>
+    <script>
+        // クエリパラメータを取得
+        var query = window.location.search;
+        var lang = 'jp';
+        if (query.indexOf('lang=en') !== -1) {
+            lang = 'en';
+        }
+
+        // 言語に応じて表示を切り替え
+        if (lang === 'en') {
+            document.getElementById('en').style.display = 'block';
+        } else {
+            document.getElementById('jp').style.display = 'block';
+        }
+
+        // 切り替えボタンの処理
+        document.getElementById('switchToEn').onclick = function() {
+            location.href = location.pathname + '?lang=en';
+        };
+        document.getElementById('switchToJp').onclick = function() {
+            location.href = location.pathname + '?lang=jp';
+        };
+    </script>
+</body>
+</html>

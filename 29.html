@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loading</title>
+        <style>
+            body {
+                background-color: #ffffff;
+                font-family: sans-serif;
+                text-align: center;
+            }
+            button {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px 40px;
+                border: solid 1px #aaa;
+                border-radius: 5px;
+                cursor: pointer;
+                color: #333;
+                font-size: 30px;
+                background-color: #f0f0f0;
+            }
+            .loading {
+                display: none;
+                margin-top: 100px;
+            }
+            .spinner {
+                margin: 20px auto;
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #333;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            .content {
+                display: none;
+                margin-top: 100px;
+            }
+            .content img {
+                max-width: 90%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="open-tab-button">画面を表示</button>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>読み込み中...</p>
+        </div>
+    
+        <div class="content" id="content">
+            <h1>画像が表示されました</h1>
+            <img src="https://www.pfirst.jp/on/demandware.static/-/Sites-pfirst-Library/ja_JP/dwd031f7f1/dogbook_top02.jpg" alt="可愛い犬" height="300" width="300">
+        </div>
+    
+        <script>
+            const button = document.getElementById('open-tab-button');
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('content');
+
+            button.addEventListener('click', () => {
+                button.style.display = 'none';      // ボタンを隠す
+                loading.style.display = 'block';    // ローディングを表示
+
+                setTimeout(() => {
+                    loading.style.display = 'none'; // ローディングを隠す
+                    content.style.display = 'block'; // コンテンツを表示
+                }, 3000); // 3秒後に切り替え
+            });
+        </script>
+    </body>
+</html>

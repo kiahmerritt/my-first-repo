@@ -1,0 +1,50 @@
+<h1>UIサンプル</h1>
+<head>
+    <style>
+        :root {
+            --main-color: black;
+            --accent-color: white;
+        }
+
+        .containerlight-mode {
+            width: 400px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            color: var(--main-color);
+        }
+        .containerdark-mode {
+            width: 400px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: var(--main-color);
+            color: var(--accent-color);
+            margin-top: 20px; /* ← 上に20pxの隙間を追加 */
+        }
+        .toggle1 {
+            border-radius: 10px;
+            background-color: lightgrey;
+            color: var(--main-color);
+            border: none;
+            padding: 10px 20px; /* ← 上下10px、左右20pxの余白 */
+        }
+        .toggle2 {
+            border-radius: 10px;
+            background-color: #302e2e;
+            color: var(--accent-color);
+            border: none;
+            padding: 10px 20px; /* ← 上下10px、左右20pxの余白 */
+        }
+    </style>
+</head>
+<div class="containerlight-mode">
+    <h2>ようこそ！</h2>
+    <p>こちらはライトモードのUIサンプルです。</p>
+    <button class="toggle1">モード切り替え</button>
+</div>
+
+<div class="containerdark-mode">
+    <h2>ようこそ！</h2>
+    <p>こちらはダークモードのUIサンプルです。</p>
+    <button class="toggle2">モード切り替え</button>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>チャット</title>
+    <style>
+        .box {
+            width: 430px;
+            height: 300px;
+            padding: 20px;
+            margin: 30px auto;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgb(103, 244, 251);
+            font-family: sans-serif;
+        }
+        .teacher {
+            background-color: rgb(165, 144, 128);
+            padding: 13px;
+            border-radius: 10px; /* 角の丸み */
+            display: inline-block; /* 吹き出しを自然なサイズに */
+        }
+        .student {
+            background-color: rgb(184, 255, 137);
+            padding: 13px;
+            border-radius: 10px; /* 角の丸み */
+            display: inline-block; /* 吹き出しを自然なサイズに */
+        }
+    </style>
+</head>
+
+<body>
+    <div  class="box">
+        <p>教員: <span class="teacher">今日はdisplayプロパティを学びます。</span></p>
+        <p>学生: <span class="student">inlineとかboxの話ですか。</span></p>
+        <p>教員: <span class="teacher">そうです。このプロパティは変えられます。</span></p>
+        <p>学生: <span class="student">本当ですか。</span></p>
+    </div>
+</body>
+</html>

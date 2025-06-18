@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>世界地図</title>
+    <style>
+        .map-container img {
+            width: 100%;
+            display: block;
+        }
+        .map-link {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8); /* 少し背景を透明に */
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+        }
+        .japan {
+            top: 33%;
+            left: 83%;
+        }
+        .america {
+            top: 33%;
+            left: 20%;
+        }
+        .australia {
+            top: 70%;
+            left: 83%;
+        }
+        .russia {
+            top: 19%;
+            left: 70%;
+        }
+        .canada {
+            top: 19%;
+            left: 20%;
+        }
+    </style>    
+</head>
+
+<body>
+    <div class="map-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Worldmap-blank.svg" alt="世界地図">
+        <a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC" target="_blank" rel="noopener noreferrer" class="map-link japan" alt="日本">日本</a>
+        <a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD" target="_blank" rel="noopener noreferrer" class="map-link america" alt="アメリカ">アメリカ</a>
+        <a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2" target="_blank" rel="noopener noreferrer" class="map-link australia" alt="オーストラリア">オーストラリア</a>
+        <a href="https://ja.wikipedia.org/wiki/%E3%83%AD%E3%82%B7%E3%82%A2" target="_blank" rel="noopener noreferrer" class="map-link russia" alt="ロシア">ロシア</a>
+        <a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%8A%E3%83%80" target="_blank" rel="noopener noreferrer" class="map-link canada" alt="カナダ">カナダ</a>
+    </div>
+</body>
+</html>

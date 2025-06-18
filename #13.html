@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>フォーム</title>
+    <style>          
+        body {
+        background: #f3f4f6;
+        }
+
+        .smart-form {
+        margin: auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding-right: 3rem;
+        }
+
+        label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: bold;
+        color: #333;
+        width: 300;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        width: 100%; 
+        }
+
+        .checkbox-group label {
+        display: block;
+        margin-top: 0.3rem;
+        font-weight: normal;
+        }
+
+        button {
+        background-color: #007acc;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%; 
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <form class="smart-form" action="/submit" method="post">
+            <label>名前：
+                <input type="text" name="username">
+            </label>
+            <label>メールアドレス：
+                <input type="text" name="mailaddress">
+            </label>
+            <br>      
+            <label>性別：
+                <input type="radio" name="gender" value="male"> 男性
+                <input type="radio" name="gender" value="female"> 女性
+            </label>
+            <br>      
+            <label>趣味:
+                <br>
+                <input type="checkbox" name="hobby" value="music" checked > 音楽
+                <input type="checkbox" name="hobby" value="sports"> スポーツ
+                <input type="checkbox" name="hobby" value="traveling"> 旅行
+            </label>
+
+            <br>      
+            <label>自由記述欄：
+                <br>
+                <textarea name="message" rows="4" cols="30"></textarea>
+            </label>
+            <br>
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</body>
+</html>

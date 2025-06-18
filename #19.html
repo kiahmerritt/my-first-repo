@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;  /* ★ 画面の高さ全体を使う */
+                margin: 0;
+            }
+
+            main {
+                flex: 1;  /* ★ mainが余白を埋める */
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #111;
+                color: #fff;
+                padding: 20px;
+                flex-wrap: wrap;
+                font-size: 14px;
+            }
+
+            /* 左側の情報 */
+            .footer__left {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* 右側リンク */
+            .footer__right a {
+                color: #ccc;
+                margin-left: 15px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .footer__right a:hover {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <!-- メインコンテンツ -->
+        </main>
+        <footer class="footer">
+            <div class ="footer_right">
+                <p>SECOM株式会社 信頼される安心を、社会へ</p>
+                <p>Copyright(C) 2000-2025 SECOM CO., LTD. All Rights Reserved.</p>
+            </div>
+            <div class="footer__right">
+                <a href="https://www.secom.co.jp/utility/about.html">利用規約</a>
+                <a href="https://www.secom.co.jp/utility/site_map.html">お問い合わせ</a>
+            </div>
+        </footer>
+    </body>
+</html>

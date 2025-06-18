@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>button color</title>
+        <style>
+            body {
+                height: 2000px;
+                background-color: #ffffff;
+                font-family: sans-serif;
+            }
+            button {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* 中央に配置 */
+                padding: 30px 50px; /* パディング */
+                border: solid 1px; /* ボーダーなし */
+                border-radius: 5px; /* 角を丸く */
+                cursor: pointer; /* カーソルをポインターに */
+                color: #333;
+                font-size: 30px;
+                align-content: center;
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="open-tab-button">新しいタブを開く</button>
+
+        <script>
+            const button = document.getElementById('open-tab-button');
+    
+            // タブを開く処理
+            button.addEventListener('click', () => {
+                window.open('https://kamiyama.ac.jp/', '_blank');
+            });
+    
+            // 背景色をスクロール位置に応じて変える関数
+            function updateButtonColor() {
+                const scrollY = window.scrollY;
+    
+                if (scrollY > 1200) {
+                    button.style.backgroundColor = '#00FF00'; // 緑
+                } else if (scrollY > 900) {
+                    button.style.backgroundColor = '#FFFF00'; // 黄
+                } else if (scrollY > 600) {
+                    button.style.backgroundColor = '#FF0000'; // 赤
+                } else if (scrollY > 300) {
+                    button.style.backgroundColor = '#FF00FF'; // ピンク
+                } else {
+                    button.style.backgroundColor = '#bb00FF'; // 紫
+                }
+            }
+    
+            // 初回読み込み時に実行
+            updateButtonColor();
+    
+            // スクロールするたびに実行
+            window.addEventListener('scroll', updateButtonColor);
+        </script>
+    </body>
+</html>
